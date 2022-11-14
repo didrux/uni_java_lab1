@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Customer {
+public class Producer {
     private String name;
     private String address;
     private Employee contactPerson;
     private List<Product> products;
 
     /**
-     * Customer constructor
+     * Producer constructor
      * @param builder
      */
-    private Customer(CustomerBuilder builder){
+    private Producer(ProducerBuilder builder){
         this.name = builder.name;
         this.address = builder.address;
         this.contactPerson = builder.contactPerson;
@@ -42,10 +42,10 @@ public class Customer {
     public boolean equals(Object obj){
         if(this == obj) return true;
         if(obj == null || obj.getClass() != this.getClass()) return false;
-        Customer customer = (Customer) obj;
-        return (customer.name.equals(this.name) &&
-                customer.address.equals(this.address) &&
-                customer.contactPerson.equals(this.contactPerson)
+        Producer producer = (Producer) obj;
+        return (producer.name.equals(this.name) &&
+                producer.address.equals(this.address) &&
+                producer.contactPerson.equals(this.contactPerson)
         );
     }
 
@@ -65,7 +65,7 @@ public class Customer {
     /**
      * Builder pattern
      */
-    public static class CustomerBuilder {
+    public static class ProducerBuilder {
 
         private String name;
 
@@ -76,14 +76,14 @@ public class Customer {
         /**
          * Builder constructor
          */
-        public CustomerBuilder(String name){
+        public ProducerBuilder(String name){
             this.name = name;
         }
 
         /**
          * Builder contact person setter
          */
-        public CustomerBuilder setContactPerson(Employee contactPerson) {
+        public ProducerBuilder setContactPerson(Employee contactPerson) {
             this.contactPerson= contactPerson;
             return this;
         }
@@ -91,7 +91,7 @@ public class Customer {
         /**
          * Builder address setter
          */
-        public CustomerBuilder setAddress(String address) {
+        public ProducerBuilder setAddress(String address) {
             this.address = address;
             return this;
         }
@@ -99,7 +99,7 @@ public class Customer {
         /**
          * Builder products setter
          */
-        public CustomerBuilder setProducts(List<Product> products){
+        public ProducerBuilder setProducts(List<Product> products){
             this.products.addAll(products);
             return this;
         }
@@ -107,7 +107,7 @@ public class Customer {
         /**
          * Builder product setter
          */
-        public CustomerBuilder setProduct(Product product){
+        public ProducerBuilder setProduct(Product product){
             this.products.add(product);
             return this;
         }
@@ -115,8 +115,8 @@ public class Customer {
         /**
          * Builder build method
          */
-        public Customer build(){
-            return new Customer(this);
+        public Producer build(){
+            return new Producer(this);
         }
 
     }

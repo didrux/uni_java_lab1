@@ -5,7 +5,7 @@ public class Product {
     private String name;
     private double price;
     private String category;
-    private Customer customer;
+    private Producer producer;
 
     /**
      * Product constructor
@@ -16,7 +16,7 @@ public class Product {
         this.name = builder.name;
         this.price = builder.price;
         this.category = builder.category;
-        this.customer = builder.customer;
+        this.producer = builder.producer;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Product {
      */
     @Override
     public String toString(){
-        return name + " | " + barcode + " | " + name + " | " + price + " | " + category + " | Customer:\n" + customer.toString();
+        return name + " | " + barcode + " | " + name + " | " + price + " | " + category + " | Producer:\n" + producer.toString();
     }
 
     /**
@@ -60,7 +60,7 @@ public class Product {
 
         private double price = 0.0;
         private String category = " ";
-        private Customer customer = new Customer.CustomerBuilder(" ").build();
+        private Producer producer = new Producer.ProducerBuilder(" ").build();
 
         /**
          * Builder constructor
@@ -87,10 +87,10 @@ public class Product {
         }
 
         /**
-         * Builder Customer setter
+         * Builder Producer setter
          */
-        public ProductBuilder setCustomer(Customer customer) {
-            this.customer = customer;
+        public ProductBuilder setProducer(Producer producer) {
+            this.producer = producer;
             return this;
         }
 
@@ -132,10 +132,10 @@ public class Product {
     }
 
     /**
-     * Customer getter
+     * Producer getter
      */
-    public Customer getCustomer(){
-        return customer;
+    public Producer getProducer(){
+        return producer;
     }
 
     /**
@@ -154,10 +154,10 @@ public class Product {
     public void setPrice(double price) { this.price = price; }
 
     /**
-     * Customer setter
+     * Producer setter
      */
-    public void setCustomer(Customer customer){
-        this.customer = customer;
+    public void setProducer(Producer producer){
+        this.producer = producer;
     }
 
 }

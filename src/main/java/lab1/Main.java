@@ -12,16 +12,16 @@ public class Main {
         Employee employeeThird = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
                 .build();
 
-        Customer customerFirst = new Customer.CustomerBuilder("Customer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+        Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
                 .build();
 
-        Customer customerSecond = new Customer.CustomerBuilder("Customer #2").setAddress("Nezalezhnosti, 147").setContactPerson(employeeFirst)
+        Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147").setContactPerson(employeeFirst)
                 .build();
 
-        Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setCustomer(customerFirst)
+        Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setProducer(producerFirst)
                 .build();
 
-        Product productSecond = new Product.ProductBuilder(2, "Table").setPrice(200.00).setCategory("Kitchen").setCustomer(customerSecond)
+        Product productSecond = new Product.ProductBuilder(2, "Table").setPrice(200.00).setCategory("Kitchen").setProducer(producerSecond)
                 .build();
 
         Product productThird = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room")
@@ -31,7 +31,7 @@ public class Main {
         products.add(productFirst);
         products.add(productThird);
 
-        Customer customerThird = new Customer.CustomerBuilder("Customer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst).setProducts(products).setProduct(productSecond)
+        Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst).setProducts(products).setProduct(productSecond)
                 .build();
 
 
@@ -51,12 +51,12 @@ public class Main {
         System.out.println(productFirst.equals(productSecond));
         System.out.println(productFirst.equals(productThird));
 
-        /// Print information about customer class
-        System.out.println("Customer: ");
-        System.out.println(customerFirst);
-        System.out.println(customerSecond);
+        /// Print information about producer class
+        System.out.println("Producer: ");
+        System.out.println(producerFirst);
+        System.out.println(producerSecond);
         System.out.println("equality: ");
-        System.out.println(customerFirst.equals(customerSecond));
-        System.out.println(customerFirst.equals(customerThird));
+        System.out.println(producerFirst.equals(producerSecond));
+        System.out.println(producerFirst.equals(producerThird));
     }
 }

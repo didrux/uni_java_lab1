@@ -1,8 +1,5 @@
-package lab0;
+package lab1;
 
-import lab1.Employee;
-import lab1.Product;
-import lab1.Customer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -17,16 +14,16 @@ public class Lab1Test {
     Employee employeeThird = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
             .build();
 
-    Customer customerFirst = new Customer.CustomerBuilder("Customer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+    Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
             .build();
 
-    Customer customerSecond = new Customer.CustomerBuilder("Customer #2").setAddress("Nezalezhnosti, 147")
+    Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147")
             .build();
 
-    Customer customerThird = new Customer.CustomerBuilder("Customer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+    Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
             .build();
 
-    Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setCustomer(customerFirst)
+    Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setProducer(producerFirst)
             .build();
 
     Product productSecond = new Product.ProductBuilder(2, "Table").setPrice(200.00).setCategory("Kitchen")
@@ -92,39 +89,39 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productToStringProvider() {
-        return new Object[][]{{productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Customer:\n" +
-                "Customer #1 | Bojenka,20 | Contact person: \n" +
+        return new Object[][]{{productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
+                "Producer #1 | Bojenka,20 | Contact person: \n" +
                 "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
     }
 
-    @Test(dataProvider = "customerEqualsProvider")
-    public void customerEqualsTest(Customer s1, Customer s2) {
+    @Test(dataProvider = "producerEqualsProvider")
+    public void producerEqualsTest(Producer s1, Producer s2) {
         assertEquals(s1, s2);
     }
 
     @DataProvider
-    public Object[][] customerEqualsProvider() {
-        return new Object[][]{{customerFirst, customerThird}};
+    public Object[][] producerEqualsProvider() {
+        return new Object[][]{{producerFirst, producerThird}};
     }
 
-    @Test(dataProvider = "customerNotEqualsProvider")
-    public void customerNotEqualsTest(Customer s1, Customer s2) {
+    @Test(dataProvider = "producerNotEqualsProvider")
+    public void producerNotEqualsTest(Producer s1, Producer s2) {
         assertNotEquals(s1, s2);
     }
 
     @DataProvider
-    public Object[][] customerNotEqualsProvider() {
-        return new Object[][]{{customerFirst, customerSecond}};
+    public Object[][] producerNotEqualsProvider() {
+        return new Object[][]{{producerFirst, producerSecond}};
     }
 
-    @Test(dataProvider = "customerToStringProvider")
-    public void customerToStringTest(Customer s1, String s) {
+    @Test(dataProvider = "producerToStringProvider")
+    public void producerToStringTest(Producer s1, String s) {
         assertEquals(s1.toString(), s);
     }
 
     @DataProvider
-    public Object[][] customerToStringProvider() {
-        return new Object[][]{{customerFirst, "Customer #1 | Bojenka,20 | Contact person: \n" +
+    public Object[][] producerToStringProvider() {
+        return new Object[][]{{producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
                 "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
     }
 }
