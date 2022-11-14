@@ -60,7 +60,7 @@ public class Product {
 
         private double price = 0.0;
         private String category = " ";
-        private Customer customer = new Customer.CustomerBuilder("none").build();
+        private Customer customer = new Customer.CustomerBuilder(" ").build();
 
         /**
          * Builder constructor

@@ -69,8 +69,8 @@ public class Customer {
 
         private String name;
 
-        private String address = "none";
-        private Employee contactPerson = new Employee.EmployeeBuilder("none").build();
+        private String address = " ";
+        private Employee contactPerson = new Employee.EmployeeBuilder(" ").build();
         private List<Product> products = new ArrayList<>();
 
         /**
