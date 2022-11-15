@@ -2,6 +2,8 @@ package lab1;
 
 import java.util.Objects;
 
+
+
 public class Employee {
     private String name;
     private double salary;
@@ -118,7 +120,7 @@ public class Employee {
          *
          * @return
          */
-        public Employee build(){
+        public Employee build() {
             return new Employee(this);
         }
 
@@ -127,21 +129,21 @@ public class Employee {
     /**
      * name getter
      */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     /**
      * salary getter
      */
-    public double getSalary(){
+    public double getSalary() {
         return salary;
     }
 
     /**
      * address getter
      */
-    public String getAddress(){
+    public String getAddress() {
         return address;
     }
 

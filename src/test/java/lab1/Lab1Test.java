@@ -89,9 +89,9 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productToStringProvider() {
-        return new Object[][]{{productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
+        return new Object[][]{{ productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
                 "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
+                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true" }};
     }
 
     @Test(dataProvider = "producerEqualsProvider")
@@ -121,7 +121,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] producerToStringProvider() {
-        return new Object[][]{{producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
+        return new Object[][]{{ producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
+                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true" }};
     }
 }

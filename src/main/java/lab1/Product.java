@@ -106,52 +106,58 @@ public class Product {
     /**
      * name getter
      */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     /**
      * price getter
      */
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
 
     /**
      * barcode getter
      */
-    public int getBarcode(){
+    public int getBarcode() {
         return barcode;
     }
 
     /**
      * category getter
      */
-    public String getCategory(){
+    public String getCategory() {
         return category;
     }
 
     /**
      * Producer getter
      */
-    public Producer getProducer(){
+    public Producer getProducer() {
         return producer;
     }
 
     /**
      * name setter
      */
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * category setter
      */
-    public void setCategory(String category) { this.category = category; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     /**
      * price setter
      */
-    public void setPrice(double price) { this.price = price; }
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     /**
      * Producer setter

@@ -27,7 +27,7 @@ public class Producer {
      */
     @Override
     public String toString(){
-        return name + " | " + address + " | Contact person: \n" + contactPerson;
+        return name + " | " + address + " | Contact person: \n" + contactPerson + "\n | List of products: \n " + products;
     }
 
 
@@ -131,12 +131,16 @@ public class Producer {
     /**
      * contactPerson getter
      */
-    public Employee getContactPerson() { return contactPerson; }
+    public Employee getContactPerson() {
+        return contactPerson;
+    }
 
     /**
      * address getter
      */
-    public String getAddress() { return address; }
+    public String getAddress() {
+        return address;
+    }
 
     /**
      * products getter
@@ -148,21 +152,29 @@ public class Producer {
     /**
      * name setter
      */
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * address setter
      */
-    public void setAddress(String address) { this.address = address; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     /**
      * contactPerson setter
      */
-    public void setContactPerson(Employee contactPerson) { this.contactPerson = contactPerson; }
+    public void setContactPerson(Employee contactPerson) {
+        this.contactPerson = contactPerson;
+    }
 
     /**
      * product setter
      */
-    public void setProducts(List<Product> products) { this.products = products; }
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 
 }
