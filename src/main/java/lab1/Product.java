@@ -1,10 +1,10 @@
 package lab1;
 
 public class Product {
-    private final int barcode;
+    private int id;
     private String name;
-    private double price;
     private String category;
+    private double price;
     private Producer producer;
 
     /**
@@ -12,10 +12,10 @@ public class Product {
      * @param builder
      */
     private Product(ProductBuilder builder){
-        this.barcode= builder.barcode;
+        this.id = builder.id;
         this.name = builder.name;
-        this.price = builder.price;
         this.category = builder.category;
+        this.price = builder.price;
         this.producer = builder.producer;
     }
 
@@ -24,8 +24,12 @@ public class Product {
      * @return class description in string format
      */
     @Override
-    public String toString(){
-        return name + " | " + barcode + " | " + name + " | " + price + " | " + category + " | Producer:\n" + producer.toString();
+    public String toString() {
+        return "Id: " + id + "\n"
+                + "Name: " + name + "\n"
+                + "Category: " + category + "\n"
+                + "Price: " + price + "\n"
+                + "Producer: " + producer + "\n";
     }
 
     /**
@@ -38,7 +42,7 @@ public class Product {
         if(this == obj) return true;
         if(obj == null || obj.getClass() != this.getClass()) return false;
         Product product = (Product) obj;
-        return (product.barcode == this.barcode);
+        return (product.id == this.id);
     }
 
     /**
@@ -47,7 +51,7 @@ public class Product {
      */
     @Override
     public int hashCode(){
-        return 31 * 9 + this.barcode;
+        return 31 * 9 + this.id;
     }
 
     /**
@@ -55,18 +59,17 @@ public class Product {
      */
     public static class ProductBuilder {
 
-        private int barcode;
+        private int id;
         private String name;
-
-        private double price = 0.0;
         private String category = " ";
+        private double price = 0.0;
         private Producer producer = new Producer.ProducerBuilder(" ").build();
 
         /**
          * Builder constructor
          */
-        public ProductBuilder(int barcode, String name){
-            this.barcode= barcode;
+        public ProductBuilder(int id, String name){
+            this.id= id;
             this.name = name;
         }
 
@@ -118,10 +121,10 @@ public class Product {
     }
 
     /**
-     * barcode getter
+     * id getter
      */
-    public int getBarcode() {
-        return barcode;
+    public int getId() {
+        return id;
     }
 
     /**

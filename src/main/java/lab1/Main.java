@@ -12,10 +12,10 @@ public class Main {
         Employee employeeThird = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
                 .build();
 
-        Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+        Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst)
                 .build();
 
-        Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147").setContactPerson(employeeFirst)
+        Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147").setContactEmployee(employeeFirst)
                 .build();
 
         Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setProducer(producerFirst)
@@ -31,7 +31,7 @@ public class Main {
         products.add(productFirst);
         products.add(productThird);
 
-        Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst).setProducts(products).setProduct(productSecond)
+        Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst).setProducts(products).setProduct(productSecond)
                 .build();
 
 

@@ -14,13 +14,13 @@ public class Lab1Test {
     Employee employeeThird = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
             .build();
 
-    Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+    Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst)
             .build();
 
     Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147")
             .build();
 
-    Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactPerson(employeeFirst)
+    Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst)
             .build();
 
     Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setProducer(producerFirst)
@@ -89,9 +89,9 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productToStringProvider() {
-        return new Object[][]{{ productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
+        return new Object[][]{{productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
                 "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true" }};
+                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
     }
 
     @Test(dataProvider = "producerEqualsProvider")
@@ -121,7 +121,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] producerToStringProvider() {
-        return new Object[][]{{ producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true" }};
+        return new Object[][]{{producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
+                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
     }
 }

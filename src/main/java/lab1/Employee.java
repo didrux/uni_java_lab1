@@ -3,9 +3,9 @@ package lab1;
 import java.util.Objects;
 
 
-
 public class Employee {
     private String name;
+    private String position;
     private double salary;
     private String address;
     private String phoneNumber;
@@ -13,10 +13,12 @@ public class Employee {
 
     /**
      * Employee constructor
+     *
      * @param builder
      */
-    private Employee(EmployeeBuilder builder){
+    private Employee(EmployeeBuilder builder) {
         this.name = builder.name;
+        this.position = builder.position;
         this.salary = builder.salary;
         this.address = builder.address;
         this.phoneNumber = builder.phoneNumber;
@@ -25,21 +27,23 @@ public class Employee {
 
     /**
      * toString
+     *
      * @return class description in string format
      */
     @Override
-    public String toString(){
-       return name + " | " + salary + " | " + address + " | " + phoneNumber + " | " + medicalExamination;
+    public String toString() {
+        return name + " | " + salary + " | " + address + " | " + phoneNumber + " | " + medicalExamination;
     }
 
     /**
      * hashCode
+     *
      * @return hash
      */
     @Override
-    public boolean equals(Object obj){
-        if(this == obj) return true;
-        if(obj == null || obj.getClass() != this.getClass()) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
         Employee employee = (Employee) obj;
         return (employee.name.equals(this.name) &&
                 employee.address.equals(this.address) &&
@@ -49,10 +53,11 @@ public class Employee {
 
     /**
      * Overrided hashCode method
+     *
      * @return hash
      */
     @Override
-    public int hashCode(){
+    public int hashCode() {
         int hash = 31;
         hash = 9 * hash + Objects.hashCode(this.name);
         hash = 9 * hash + Objects.hashCode(this.address);
@@ -63,8 +68,10 @@ public class Employee {
     /**
      * Implement classes via builder
      */
-    public static class EmployeeBuilder{
+    public static class EmployeeBuilder {
         private String name;
+
+        private String position;
 
         private double salary = 0;
         private String address = " ";
@@ -74,8 +81,17 @@ public class Employee {
         /**
          * @param name
          */
-        public EmployeeBuilder(String name){
+        public EmployeeBuilder(String name) {
             this.name = name;
+        }
+
+        /**
+         * @param position
+         * @return
+         */
+        public EmployeeBuilder setPosition(String position) {
+            this.position = position;
+            return this;
         }
 
         /**
@@ -97,7 +113,6 @@ public class Employee {
         }
 
         /**
-         *
          * @param phoneNumber
          * @return
          */
@@ -107,7 +122,6 @@ public class Employee {
         }
 
         /**
-         *
          * @param medicalExamination
          * @return
          */
@@ -117,7 +131,6 @@ public class Employee {
         }
 
         /**
-         *
          * @return
          */
         public Employee build() {
@@ -131,6 +144,14 @@ public class Employee {
      */
     public String getName() {
         return name;
+    }
+
+
+    /**
+     * position getter;
+     */
+    public String getPosition() {
+        return position;
     }
 
     /**
