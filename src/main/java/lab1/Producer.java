@@ -27,7 +27,7 @@ public class Producer {
      */
     @Override
     public String toString(){
-        return name + " | " + address + " | Contact person: \n" + contactPerson + "\n | List of products: \n " + products;
+        return name + " | " + address + " | Contact person: \n" + contactPerson;
     }
 
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="lab1.Lab1Test" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-11-15T08:24:14" hostname="DESKTOP-TVLHH8O" time="0.051">
+<testsuite name="lab1.Lab1Test" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-11-17T17:01:43" hostname="DESKTOP-TVLHH8O" time="0.046">
   <properties/>
-  <testcase name="employeeEqualsTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.018"/>
-  <testcase name="employeeNotEqualsTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Ivan | 1200.5 |   |   | false)" classname="lab1.Lab1Test" time="0.0"/>
-  <testcase name="employeeToStringTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.001"/>
-  <testcase name="producerEqualsTest[0](Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.0"/>
+  <testcase name="employeeEqualsTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.012"/>
+  <testcase name="employeeNotEqualsTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Ivan | 1200.5 |   |   | false)" classname="lab1.Lab1Test" time="0.001"/>
+  <testcase name="employeeToStringTest[0](Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.0"/>
+  <testcase name="producerEqualsTest[0](Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.001"/>
   <testcase name="producerNotEqualsTest[0](Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Producer #2 | Nezalezhnosti, 147 | Contact person: &#10;  | 0.0 |   |   | false)" classname="lab1.Lab1Test" time="0.001"/>
   <testcase name="producerToStringTest[0](Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.0"/>
   <testcase name="productEqualsTest[0](Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;  |   | Contact person: &#10;  | 0.0 |   |   | false)" classname="lab1.Lab1Test" time="0.01"/>
   <testcase name="productNotEqualsTest[0](Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Table | 2 | Table | 200.0 | Kitchen | Producer:&#10;  |   | Contact person: &#10;  | 0.0 |   |   | false)" classname="lab1.Lab1Test" time="0.001"/>
-  <testcase name="productToStringTest[0](Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.0"/>
+  <testcase name="productToStringTest[0](Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true, Sofa | 1 | Sofa | 50.49 | Living room | Producer:&#10;Producer #1 | Bojenka,20 | Contact person: &#10;Frank | 500.0 | Poshtova, 22 | 0504340601 | true)" classname="lab1.Lab1Test" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
