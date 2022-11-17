@@ -5,7 +5,6 @@ public class Product {
     private String name;
     private String category;
     private double price;
-    private Producer producer;
 
     /**
      * Product constructor
@@ -16,7 +15,6 @@ public class Product {
         this.name = builder.name;
         this.category = builder.category;
         this.price = builder.price;
-        this.producer = builder.producer;
     }
 
     /**
@@ -28,8 +26,7 @@ public class Product {
         return "Id: " + id + "\n"
                 + "Name: " + name + "\n"
                 + "Category: " + category + "\n"
-                + "Price: " + price + "\n"
-                + "Producer: " + producer + "\n";
+                + "Price: " + price + "\n";
     }
 
     /**
@@ -63,7 +60,6 @@ public class Product {
         private String name;
         private String category = " ";
         private double price = 0.0;
-        private Producer producer = new Producer.ProducerBuilder(" ").build();
 
         /**
          * Builder constructor
@@ -89,13 +85,7 @@ public class Product {
             return this;
         }
 
-        /**
-         * Builder Producer setter
-         */
-        public ProductBuilder setProducer(Producer producer) {
-            this.producer = producer;
-            return this;
-        }
+
 
         /**
          * Builder build method
@@ -134,12 +124,6 @@ public class Product {
         return category;
     }
 
-    /**
-     * Producer getter
-     */
-    public Producer getProducer() {
-        return producer;
-    }
 
     /**
      * name setter
@@ -162,11 +146,5 @@ public class Product {
         this.price = price;
     }
 
-    /**
-     * Producer setter
-     */
-    public void setProducer(Producer producer){
-        this.producer = producer;
-    }
 
 }

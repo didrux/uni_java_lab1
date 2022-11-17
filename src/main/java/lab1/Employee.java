@@ -32,7 +32,12 @@ public class Employee {
      */
     @Override
     public String toString() {
-        return name + " | " + salary + " | " + address + " | " + phoneNumber + " | " + medicalExamination;
+        return "Name: " + name + "\n"
+                + "Position: " + position + "\n"
+                + "Salary: " + salary + "\n"
+                + "Address: " + address + "\n"
+                + "Phone number: " + phoneNumber + "\n"
+                + "Medical examination: " + medicalExamination + "\n";
     }
 
     /**

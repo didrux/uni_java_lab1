@@ -3,33 +3,42 @@ package lab1;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
 public class Lab1Test {
-    Employee employeeFirst = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
-            .build();
-    Employee employeeSecond = new Employee.EmployeeBuilder("Ivan").setSalary(1200.50)
-            .build();
-    Employee employeeThird = new Employee.EmployeeBuilder("Frank").setSalary(500.0).setAddress("Poshtova, 22").setPhoneNumber("0504340601").setMedicalExamination(true)
+    Employee employeeFirst = new Employee.EmployeeBuilder("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
             .build();
 
-    Producer producerFirst = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst)
+    Employee employeeSecond = new Employee.EmployeeBuilder("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
             .build();
 
-    Producer producerSecond = new Producer.ProducerBuilder("Producer #2").setAddress("Nezalezhnosti, 147")
+    Employee employeeThird = new Employee.EmployeeBuilder("Ivan").setPosition("Seller").setSalary(15000).setPhoneNumber("0504340602").setMedicalExamination(true).setAddress("Poshtova, 2")
             .build();
 
-    Producer producerThird = new Producer.ProducerBuilder("Producer #1").setAddress("Bojenka,20").setContactEmployee(employeeFirst)
+    Product productFirst = new Product.ProductBuilder(901, "Table").setPrice(1500).setCategory("Kitchen")
             .build();
 
-    Product productFirst = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room").setProducer(producerFirst)
+    Product productSecond = new Product.ProductBuilder(901, "Table").setPrice(1500).setCategory("Kitchen")
             .build();
 
-    Product productSecond = new Product.ProductBuilder(2, "Table").setPrice(200.00).setCategory("Kitchen")
+    Product productThird = new Product.ProductBuilder(902, "Sofa").setPrice(4000).setCategory("Living room")
             .build();
 
-    Product productThird = new Product.ProductBuilder(1, "Sofa").setPrice(50.49).setCategory("Living room")
+    List<Product> kitchenProducts = Arrays.asList(productFirst, productSecond);
+
+
+    Producer producerFirst = new Producer.ProducerBuilder("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2").setContactEmployee(employeeFirst)
+            .build();
+
+    Producer producerSecond = new Producer.ProducerBuilder("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2").setContactEmployee(employeeFirst)
+            .build();
+
+    Producer producerThird = new Producer.ProducerBuilder("Anna").setProduct(productThird)
             .build();
 
     @Test(dataProvider = "employeeEqualsProvider")
@@ -39,7 +48,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] employeeEqualsProvider() {
-        return new Object[][]{{employeeFirst, employeeThird}};
+        return new Object[][]{{employeeFirst, employeeSecond}};
     }
 
     @Test(dataProvider = "employeeNotEqualsProvider")
@@ -49,7 +58,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] employeeNotEqualsProvider() {
-        return new Object[][]{{employeeFirst, employeeSecond}};
+        return new Object[][]{{employeeFirst, employeeThird}};
     }
 
     @Test(dataProvider = "employeeToStringProvider")
@@ -59,7 +68,12 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] employeeToStringProvider() {
-        return new Object[][]{{employeeFirst, "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
+        return new Object[][]{{employeeFirst, "Name: " + "Misha" + "\n"
+                + "Position: " + "Receiver" + "\n"
+                + "Salary: " + "20000.0" + "\n"
+                + "Address: " + "Holovna, 1" + "\n"
+                + "Phone number: " + "0504340601" + "\n"
+                + "Medical examination: " + "true" + "\n"}};
     }
 
     @Test(dataProvider = "productEqualsProvider")
@@ -69,7 +83,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productEqualsProvider() {
-        return new Object[][]{{productFirst, productThird}};
+        return new Object[][]{{productFirst, productSecond}};
     }
 
     @Test(dataProvider = "productNotEqualsProvider")
@@ -79,7 +93,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productNotEqualsProvider() {
-        return new Object[][]{{productFirst, productSecond}};
+        return new Object[][]{{productFirst, productThird}};
     }
 
     @Test(dataProvider = "productToStringProvider")
@@ -89,9 +103,10 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] productToStringProvider() {
-        return new Object[][]{{productFirst, "Sofa | 1 | Sofa | 50.49 | Living room | Producer:\n" +
-                "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
+        return new Object[][]{{productFirst, "Id: " + "901" + "\n"
+                + "Name: " + "Table" + "\n"
+                + "Category: " + "Kitchen" + "\n"
+                + "Price: " + "1500.0" + "\n"}};
     }
 
     @Test(dataProvider = "producerEqualsProvider")
@@ -101,7 +116,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] producerEqualsProvider() {
-        return new Object[][]{{producerFirst, producerThird}};
+        return new Object[][]{{producerFirst, producerSecond}};
     }
 
     @Test(dataProvider = "producerNotEqualsProvider")
@@ -111,7 +126,7 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] producerNotEqualsProvider() {
-        return new Object[][]{{producerFirst, producerSecond}};
+        return new Object[][]{{producerFirst, producerThird}};
     }
 
     @Test(dataProvider = "producerToStringProvider")
@@ -121,7 +136,23 @@ public class Lab1Test {
 
     @DataProvider
     public Object[][] producerToStringProvider() {
-        return new Object[][]{{producerFirst, "Producer #1 | Bojenka,20 | Contact person: \n" +
-                "Frank | 500.0 | Poshtova, 22 | 0504340601 | true"}};
+        return new Object[][]{{producerFirst, "Name: Andrew\n" +
+                "Address: Ukraine, Chernivtsi, Soborna 2\n" +
+                "Contact employee: Name: Misha\n" +
+                "Position: Receiver\n" +
+                "Salary: 20000.0\n" +
+                "Address: Holovna, 1\n" +
+                "Phone number: 0504340601\n" +
+                "Medical examination: true\n" +
+                "\n" +
+                "Products: [Id: 901\n" +
+                "Name: Table\n" +
+                "Category: Kitchen\n" +
+                "Price: 1500.0\n" +
+                ", Id: 901\n" +
+                "Name: Table\n" +
+                "Category: Kitchen\n" +
+                "Price: 1500.0\n" +
+                "]\n"}};
     }
 }
