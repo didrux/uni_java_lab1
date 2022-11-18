@@ -78,10 +78,10 @@ public class Employee {
 
         private String position;
 
-        private double salary = 0;
+        private double salary;
         private String address = " ";
         private String phoneNumber = " ";
-        private boolean medicalExamination = false;
+        private boolean medicalExamination;
 
         /**
          * @param name
